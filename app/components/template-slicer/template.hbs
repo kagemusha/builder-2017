@@ -1,0 +1,78 @@
+<h2>Templates</h2>
+
+{{#radio-button
+  value=0
+  groupValue=templateNum
+  changed="templateChanged"
+}}
+  Meetup
+{{/radio-button}}
+
+{{#radio-button
+  value=1
+  groupValue=templateNum
+  changed="templateChanged"
+}}
+  Uniqlo
+{{/radio-button}}
+
+<h2>Slicer</h2>
+
+
+{{#radio-button
+  value="html"
+  groupValue=viewMode
+  changed="viewChanged"}}
+  html
+{{/radio-button}}
+
+{{#radio-button
+  value="slices"
+  groupValue=viewMode
+changed="viewChanged"}}
+  Slices
+{{/radio-button}}
+
+{{#radio-button
+  value="savedSlices"
+  groupValue=viewMode
+  changed="viewChanged"
+}}
+  Saved Slices
+{{/radio-button}}
+
+<div>
+  {{#if showHtml}}
+    {{{template.html}}}
+  {{/if}}
+
+  {{#if showSlices}}
+    Slice by: {{input value=tagType}}
+
+    {{#each slices as |slice i|}}
+      <div class="slice-container">
+        <div class="slice-separator">&nbsp;</div>
+        <div class="button-bar">
+          <button class="myButton" {{action "saveSlice" i}}>Save</button>
+        </div>
+        <div class="slice">{{{slice}}}</div>
+        <br/><br/>
+        <br/>
+      <pre>
+        <div class="html">{{slice}}</div>
+      </pre>
+      </div>
+    {{/each}}
+  {{/if}}
+
+  {{#if showSaved}}
+    {{#each savedSlices as |slice|}}
+      <div class="slice-separator">&nbsp;</div>
+      <div class="slice">{{{slice}}}</div>
+      <br/><br/>
+      <pre>
+        <div class="html">{{slice}}</div>
+      </pre>
+    {{/each}}
+  {{/if}}
+</div>

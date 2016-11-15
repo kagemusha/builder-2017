@@ -1,0 +1,43 @@
+.slice {
+  border: 1px solid black;
+  padding: 10px;
+  margin: 10px;
+}
+
+.slice-separator {
+  border-bottom: 3px solid blue;
+  width: 100%;
+  margin: 30px 0 10px 0;
+}
+
+.slice-container {
+  margin: 0 40px;
+}
+
+.button-bar {
+  margin-left: 20px;
+}
+
+.myButton {
+  background-color:#44c767;
+  -moz-border-radius:28px;
+  -webkit-border-radius:28px;
+  border-radius:28px;
+  border:1px solid #18ab29;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:17px;
+  padding:16px 31px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #2f6627;
+}
+.myButton:hover {
+  background-color:#5cbf2a;
+}
+.myButton:active {
+  position:relative;
+  top:1px;
+}
+

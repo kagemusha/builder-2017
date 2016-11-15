@@ -1,0 +1,18 @@
+
+<p>
+  New layout: <br>
+  Name: {{input value=name}}
+  <button {{action 'save' name}}>Save</button>
+</p>
+
+<p>
+  Layouts:
+
+  <ul>
+    {{#each model as |layout|}}
+      <li>
+        {{#link-to "layout" layout}} {{layout.name}} {{/link-to}}
+      </li>
+    {{/each}}
+  </ul>
+</p>
