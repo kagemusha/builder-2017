@@ -1,6 +1,9 @@
 export default function() {
 
-  createCRUDRoutes(this, 'layouts');
+  const resourceTypes = ['layouts', 'sections'];
+  for (let rType of resourceTypes) {
+    createCRUDRoutes(this, rType);
+  }
 
   function createCRUDRoutes(server, type) {
     const individualPath = `${type}/:id`;

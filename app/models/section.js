@@ -1,5 +1,8 @@
 import DS from 'ember-data';
 
-export default DS.Model.extend({
+const { attr, belongsTo } = DS;
 
+export default DS.Model.extend({
+  layout: belongsTo('layout'),
+  name: attr(),
 });

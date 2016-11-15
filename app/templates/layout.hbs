@@ -1,2 +1,39 @@
-{{layout.name}}
+{{model.name}}
 
+<div class="email-builder-tool">
+
+  <div class="structure builder-tool-column">
+    <div class="column-header">Structure</div>
+    <div class="column-body">
+      <main>
+        <p class="design-attributes">
+          <div>
+            Width: {{input value="auto"}}
+          </div>
+          <div>
+            Default Separator: {{input value="separator"}}
+          </div>
+        </p>
+        <p>
+          New section: <br>
+          Name: {{input value=newSectionName}}
+          <button {{action 'addSection' newSectionName}}>Add Section</button>
+        </p>
+      </main>
+    </div>
+  </div>
+
+  <div class="email-view-column builder-tool-column">
+
+    <div class="column-header">Layout Viewer</div>
+
+    <div class="column-body">
+        {{#each model.sections as |section|}}
+          <div class="layout-section">
+            {{section.name}}
+          </div>
+        {{/each}}
+    </div>
+  </div>
+
+</div>

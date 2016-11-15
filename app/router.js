@@ -9,7 +9,7 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('designer');
   this.route('slicer');
-  this.route('layout', {path: 'layout/:layout_id'});
+  this.route('layout', {path: 'layouts/:layout_id'});
 });
 
 export default Router;
