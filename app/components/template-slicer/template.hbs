@@ -1,22 +1,8 @@
-<h2>Templates</h2>
-
-{{#radio-button
-  value=0
-  groupValue=templateNum
-  changed="templateChanged"
-}}
-  Meetup
-{{/radio-button}}
-
-{{#radio-button
-  value=1
-  groupValue=templateNum
-  changed="templateChanged"
-}}
-  Uniqlo
-{{/radio-button}}
-
 <h2>Slicer</h2>
+
+<p>
+  {{x-file-input name="files" multiple=false action=(action "didSelectFile") alt="Choose a File"}}
+</p>
 
 
 {{#radio-button
