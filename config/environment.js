@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'slicer2',
+    modulePrefix: 'builder-2017',
     environment: environment,
     rootURL: '/',
     locationType: 'auto',

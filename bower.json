@@ -1,5 +1,5 @@
 {
-  "name": "slicer2",
+  "name": "builder-2017",
   "dependencies": {
     "ember": "~2.9.0",
     "ember-cli-shims": "0.1.3"
