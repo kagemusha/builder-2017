@@ -1,8 +1,6 @@
 import Ember from 'ember';
-import meetupTemplate from '../../example_emails/meetup';
-import uniqloTemplate from '../../example_emails/uniqlo';
 
-const { computed } = Ember;
+const { computed, inject } = Ember;
 
 function getFileReadPromise(file) {
 
@@ -22,14 +20,14 @@ function getFileReadPromise(file) {
 
 export default Ember.Component.extend({
 
-  templates: [meetupTemplate, uniqloTemplate],
-  template: meetupTemplate,
+  store: inject.service('store'),
+  template: null,
   viewMode: "html",
   showHtml: computed.equal("viewMode","html"),
   showSlices: computed.equal("viewMode","slices"),
-  showSaved: computed.equal("viewMode","savedSlices"),
+  showSaved: computed.equal("viewMode","assets"),
   tagType: "table",
-  savedSlices: [],
+  assets: [],
   slices: computed('template.html', 'tagType', function(){
     const dom = Ember.$(this.get('template.html'));
     try {
@@ -45,18 +43,20 @@ export default Ember.Component.extend({
     },
     saveSlice(i) {
       const slice = this.get("slices").objectAt(i);
-      this.get('savedSlices').push(slice.slice());
+      const asset = this.get('store').createRecord('asset', {html: slice});
+      asset.save().then(()=> {
+        this.set('assets', this.get('store').peekAll('asset')); //todo: refine
+      });
     },
     templateChanged(templateNum) {
       this.set('template', this.get('templates')[templateNum]);
-      this.set('savedSlices', []);
     },
     didSelectFile(files, resetInput) {
       const fileReader = getFileReadPromise(files[0]);
       fileReader.then(file => {
         this.set("template", file);
         resetInput();
-      })
+      });
     }
   }
 });

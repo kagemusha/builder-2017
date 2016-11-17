@@ -1,6 +1,6 @@
 export default function() {
 
-  const resourceTypes = ['layouts', 'sections'];
+  const resourceTypes = ['layouts', 'sections', 'assets'];
   for (let rType of resourceTypes) {
     createCRUDRoutes(this, rType);
   }

@@ -20,11 +20,11 @@ changed="viewChanged"}}
 {{/radio-button}}
 
 {{#radio-button
-  value="savedSlices"
+  value="assets"
   groupValue=viewMode
   changed="viewChanged"
 }}
-  Saved Slices
+  Assets
 {{/radio-button}}
 
 <div>
@@ -52,12 +52,12 @@ changed="viewChanged"}}
   {{/if}}
 
   {{#if showSaved}}
-    {{#each savedSlices as |slice|}}
+    {{#each assets as |asset|}}
       <div class="slice-separator">&nbsp;</div>
-      <div class="slice">{{{slice}}}</div>
+      <div class="slice">{{{asset.html}}}</div>
       <br/><br/>
       <pre>
-        <div class="html">{{slice}}</div>
+        <div class="html">{{asset.html}}</div>
       </pre>
     {{/each}}
   {{/if}}
