@@ -1,0 +1,7 @@
+{{#if isInBlock}}
+  <div class="block-cutter" style="position:absolute;height:1px;width:100%;background:black"></div>
+{{/if}}
+
+{{#each dividers as |divider|}}
+  <div class="block-border" style="position:absolute;{{divider}};height:1px;width:100%;background:black"></div>
+{{/each}}

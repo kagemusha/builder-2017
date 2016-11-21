@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('designer');
   this.route('slicer');
   this.route('layout', {path: 'layouts/:layout_id'});
+  this.route('divider');
 });
 
 export default Router;

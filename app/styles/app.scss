@@ -71,3 +71,17 @@ $emailColumnColor: #e1e8f4;
   display: flex;
   justify-content: space-around;
 }
+
+.canvas {
+  position: relative;
+  margin-left: 100px;
+  background: lightgoldenrodyellow;
+}
+
+.border-block {
+  //position: absolute;
+  //top: 1px;
+  background: blue;
+  height: 3px;
+  width: 100%
+}

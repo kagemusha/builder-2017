@@ -41,6 +41,8 @@
     "ember-load-initializers": "^0.5.1",
     "ember-radio-button": "1.0.7",
     "ember-resolver": "^2.0.3",
+    "ember-route-action-helper": "2.0.0",
+    "ember-spectrum-color-picker": "0.5.1",
     "ember-welcome-page": "^1.0.3",
     "emberx-file-input": "1.1.0",
     "loader.js": "^4.0.10"

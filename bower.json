@@ -2,6 +2,7 @@
   "name": "builder-2017",
   "dependencies": {
     "ember": "~2.9.0",
-    "ember-cli-shims": "0.1.3"
+    "ember-cli-shims": "0.1.3",
+    "spectrum": "^1.8.0"
   }
 }
