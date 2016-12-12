@@ -36,4 +36,16 @@
     </div>
   </div>
 
+  <div class="email-view-column builder-tool-column">
+
+    <div class="column-header">Assets</div>
+
+    <div class="column-body">
+      <ul>
+        {{#each assets as |asset|}}
+          <li>{{asset.name}}</li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
 </div>

@@ -41,9 +41,8 @@ export default Ember.Component.extend({
     viewChanged(val) {
       this.set('viewMode', val);
     },
-    saveSlice(i) {
-      const slice = this.get("slices").objectAt(i);
-      const asset = this.get('store').createRecord('asset', {html: slice});
+    saveSlice(name, slice) {
+      const asset = this.get('store').createRecord('asset', {name: name, html: slice});
       asset.save().then(()=> {
         this.set('assets', this.get('store').peekAll('asset')); //todo: refine
       });

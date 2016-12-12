@@ -4,6 +4,7 @@ const { attr } = DS;
 
 export default DS.Model.extend({
   html: attr(),
+  name: attr(),
   x: attr(),
   y: attr(),
   height: attr(),

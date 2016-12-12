@@ -1,8 +1,10 @@
 <h2>Slicer</h2>
 
-<p>
-  {{x-file-input name="files" multiple=false action=(action "didSelectFile") alt="Choose a File"}}
-</p>
+<div>
+  <button>
+    {{x-file-input name="files" multiple=false action=(action "didSelectFile") alt="Choose a File"}}
+  </button>
+</div>
 
 
 {{#radio-button
@@ -29,25 +31,14 @@ changed="viewChanged"}}
 
 <div>
   {{#if showHtml}}
-    {{{template.html}}}
+    {{!{template.html}}}
   {{/if}}
 
   {{#if showSlices}}
     Slice by: {{input value=tagType}}
 
-    {{#each slices as |slice i|}}
-      <div class="slice-container">
-        <div class="slice-separator">&nbsp;</div>
-        <div class="button-bar">
-          <button class="myButton" {{action "saveSlice" i}}>Save</button>
-        </div>
-        <div class="slice">{{{slice}}}</div>
-        <br/><br/>
-        <br/>
-      <pre>
-        <div class="html">{{slice}}</div>
-      </pre>
-      </div>
+    {{#each slices as |slice|}}
+      {{slice-selector slice=slice save=(action "saveSlice")}}
     {{/each}}
   {{/if}}
 

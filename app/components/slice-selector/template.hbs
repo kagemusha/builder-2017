@@ -1,0 +1,13 @@
+<div class="slice-container">
+  <div class="slice-separator">&nbsp;</div>
+  {{input placeholder="name" value=name}}
+  <div class="button-bar">
+    <button class="myButton" {{action "save" slice }}>Save</button>
+  </div>
+  <div class="slice">{{{slice}}}</div>
+  <br/><br/>
+  <br/>
+      <pre>
+        <!--<div class="html">{{!slice}}</div>-->
+      </pre>
+</div>
