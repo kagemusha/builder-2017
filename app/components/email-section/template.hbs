@@ -1,6 +1,6 @@
   {{#if isSelectingAsset}}
     {{#unless isPreview}}
-      <div class="layout-section {{if isPreview "preview"}}">
+      <div class="layout-section">
         <div class="selecting-asset">
           <div>{{section.name}}</div>
           {{#power-select options=assets onchange=(action "selectedAsset") as |asset|}}

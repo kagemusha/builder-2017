@@ -7,7 +7,7 @@ export default Ember.Component.extend({
   asset: null,
   clickedSelect: false,
   isPreview: computed.equal('mode', 'preview'),
-  isSelectingAsset: computed('asset', function(){
+  isSelectingAsset: computed('asset','clickedSelect', function(){
     return get(this, 'clickedSelect') || Ember.isBlank(get(this, 'asset'));
   }),
   click() {

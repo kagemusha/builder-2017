@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-const { computed, inject } = Ember;
+const { get, set, computed, inject } = Ember;
 
 function getFileReadPromise(file) {
 
@@ -28,6 +28,10 @@ export default Ember.Component.extend({
   showSaved: computed.equal("viewMode","assets"),
   tagType: "table",
   assets: [],
+  fileName: computed('template' , function() {
+    return get(this, 'template.name');
+  }),
+  hasFile: computed.notEmpty('fileName'),
   slices: computed('template.html', 'tagType', function(){
     const dom = Ember.$(this.get('template.html'));
     try {
@@ -53,7 +57,7 @@ export default Ember.Component.extend({
     didSelectFile(files, resetInput) {
       const fileReader = getFileReadPromise(files[0]);
       fileReader.then(file => {
-        this.set("template", file);
+        set(this, "template", file);
         resetInput();
       });
     }

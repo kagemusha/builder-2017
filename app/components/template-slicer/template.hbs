@@ -1,9 +1,14 @@
 <h2>Slicer</h2>
 
-<div>
+<div class="file-panel">
   <button>
     {{x-file-input name="files" multiple=false action=(action "didSelectFile") alt="Choose a File"}}
   </button>
+  {{#if hasFile}}
+    <div>
+      File: {{fileName}}
+    </div>
+  {{/if}}
 </div>
 
 
