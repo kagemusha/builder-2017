@@ -4,6 +4,7 @@ export default Model.extend({
   init() {
 
   },
+  emailTemplates: hasMany('email-templates'),
   sections: hasMany('section')
 });
 

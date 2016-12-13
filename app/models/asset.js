@@ -1,6 +1,6 @@
 import DS from 'ember-data';
 
-const { attr } = DS;
+const { attr, hasMany } = DS;
 
 export default DS.Model.extend({
   html: attr(),
@@ -8,5 +8,6 @@ export default DS.Model.extend({
   x: attr(),
   y: attr(),
   height: attr(),
-  width: attr()
+  width: attr(),
+  assetMapping: hasMany('asset-mappings'),
 });

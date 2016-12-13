@@ -1,6 +1,6 @@
 @import 'slicer';
 @import 'design';
-
+@import "ember-power-select";
 
 $emailColumnColor: #e1e8f4;
 
@@ -9,11 +9,17 @@ $emailColumnColor: #e1e8f4;
   background: white;
   border: 1px black solid;
   margin-bottom: 20px;
-  height: 60px;
+  overflow: auto;
+  min-height: 60px;
 
-&.content {
-   height: 300px;
- }
+  &.preview {
+    border: none;
+    margin-bottom: 0;
+  }
+}
+
+.selecting-asset {
+  padding: 10px;
 }
 
 .email-builder-tool {
@@ -84,4 +90,8 @@ $emailColumnColor: #e1e8f4;
   background: blue;
   height: 3px;
   width: 100%
+}
+
+.section-selector {
+  height: 100%
 }

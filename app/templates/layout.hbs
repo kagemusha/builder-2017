@@ -38,14 +38,19 @@
 
   <div class="email-view-column builder-tool-column">
 
-    <div class="column-header">Assets</div>
-
+    <div class="column-header">Email Creator</div>
+    <div>
+      <a href="" {{action "setMode" "design"}}>Design</a>
+      <a href="" {{action "setMode" "preview"}}>Preview</a>
+    </div>
     <div class="column-body">
-      <ul>
-        {{#each assets as |asset|}}
-          <li>{{asset.name}}</li>
-        {{/each}}
-      </ul>
+      {{#each model.sections as |section|}}
+        {{email-section section=section assets=assets mode=mode}}
+      {{/each}}
     </div>
   </div>
 </div>
+
+{{#if isShowingAssetSelectorModal}}
+
+{{/if}}
