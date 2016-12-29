@@ -1,8 +1,9 @@
 import DS from 'ember-data';
 
-const { belongsTo, hasMany } = DS;
+const { attr, belongsTo, hasMany } = DS;
 
 export default DS.Model.extend({
+  name: attr(),
   layout: belongsTo('layout'),
   assetMappings: hasMany('asset-mapping'),
 

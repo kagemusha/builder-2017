@@ -1,0 +1,29 @@
+<strong>{{model.name}}</strong>
+<br/>
+
+
+<div class="email-builder-tool">
+
+  <div class="email-view-column builder-tool-column">
+
+    <div class="column-header">Email Creator</div>
+    <div class="email-designer-buttons">
+      <div>
+        <a href="" {{action "setMode" "design"}}>Design</a>
+        <a href="" {{action "setMode" "preview"}}>Preview</a>
+      </div>
+      <div>
+        <a href="" {{action "export"}}>Export</a>
+      </div>
+    </div>
+    <div class="column-body">
+      {{#each model.layout.sections as |section|}}
+        {{email-section email=model section=section assets=assets mode=mode}}
+      {{/each}}
+    </div>
+  </div>
+</div>
+
+{{#if isShowingAssetSelectorModal}}
+
+{{/if}}

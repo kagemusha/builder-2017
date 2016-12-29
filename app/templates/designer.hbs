@@ -1,15 +1,26 @@
 
 <p>
+ <h2>Templates</h2>
+  <ul>
+    {{#each emailTemplates as |template|}}
+      <li>
+        {{#link-to "email" template}} {{template.name}} {{/link-to}}
+      </li>
+    {{/each}}
+  </ul>
+
+</p>
+
+<p>
+<h2>Layouts</h2>
   New layout: <br>
   Name: {{input value=name}}
   <button {{action 'save' name}}>Save</button>
 </p>
 
 <p>
-  Layouts:
-
   <ul>
-    {{#each model as |layout|}}
+    {{#each layouts as |layout|}}
       <li>
         {{#link-to "layout" layout}} {{layout.name}} {{/link-to}}
       </li>

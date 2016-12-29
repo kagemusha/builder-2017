@@ -1,3 +1,5 @@
+import assetFixtures from "../fixtures/assets";
+
 export default function( server ) {
 
   /*
@@ -7,12 +9,20 @@ export default function( server ) {
 
     Make sure to define a factory for each model you want to create.
   */
-  server.loadFixtures('assets');
+  const assets = assetFixtures.map(asset => server.create('asset', asset));
   const layout = server.create('layout', {name: 'uniqlo layout'});
 
-  for (name of ["header1", "header2", "content", "footer"]) {
-    server.create('section',  {name: name, layout: layout});
-  }
+  const sections = ["header1", "header2", "content", "footer"].map(name => {
+    return server.create('section',  {name: `uniqlo ${name}`, layout: layout});
+  });
+  const emailTemplate = server.create('emailTemplate', {name: "uniqlo standard", layout: layout});
+  const assetMappings = [0,1, 3].map(i => {
+    return server.create('asset-mapping', {
+      emailTemplate: emailTemplate,
+      section: sections[i],
+      asset: assets[i]
+    });
+  });
+  emailTemplate.assetMappings = assetMappings;
 
-  server.create('emailTemplate', {layout: layout})
 }
