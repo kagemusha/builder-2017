@@ -2,6 +2,22 @@
 @import 'design';
 @import "ember-power-select";
 
+.main-menu {
+  background: black;
+  width: 100%;
+  padding: 10px 40px;
+  a {
+    display: inline-block;
+    width: 100px;
+    padding: 5px 10px;
+    color: black;
+    border-radius: 8px;
+    text-align: center;
+    background: pink;
+    text-decoration: none;
+  }
+}
+
 $emailColumnColor: #e1e8f4;
 
 .layout-section {
@@ -98,4 +114,9 @@ $emailColumnColor: #e1e8f4;
 
 .file-panel {
   margin: 20px 0;
+}
+
+.email-designer-buttons {
+  display: flex;
+  justify-content: space-around;
 }
