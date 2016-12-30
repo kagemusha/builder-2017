@@ -2,6 +2,16 @@
 @import 'design';
 @import "ember-power-select";
 
+body, input, button, select, option, textarea {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.8em;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
 .main-menu {
   background: black;
   width: 100%;
@@ -9,11 +19,12 @@
   a {
     display: inline-block;
     width: 100px;
-    padding: 5px 10px;
-    color: black;
+    padding: 6px 10px;
+    margin-right: 6px;
+    color: white;
     border-radius: 8px;
     text-align: center;
-    background: pink;
+    background: #d8367f;
     text-decoration: none;
   }
 }
@@ -84,7 +95,8 @@ $emailColumnColor: #e1e8f4;
 }
 
 .column-body {
-  padding: 8px;
+  max-width: 760px;
+  padding: 8px 20px;
 }
 
 .email-controls {
